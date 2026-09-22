@@ -1,6 +1,6 @@
 # Bugatti Type 57G “Tank” – mô hình 3D dựng từ đầu
 
-![Bugatti Type 57G Tank – góc 3/4 trước](renders/01_hero_front_three_quarter.jpg)
+[![Bugatti Type 57G Tank – góc 3/4 trước](renders/web/01_hero_front_three_quarter.jpg)](renders/01_hero_front_three_quarter.jpg)
 
 Mô hình 3D chiếc Bugatti Type 57G “Tank” khung 57335 (Simeone Museum ghi là 57G 01). Xe chế tạo năm 1936 và thắng 24 Giờ Le Mans 1937 với Jean-Pierre Wimille và Robert Benoist. Đây là chiếc Tank duy nhất còn tồn tại, hiện trưng bày tại Simeone Foundation Automotive Museum (Philadelphia).
 
@@ -17,17 +17,17 @@ Toàn bộ hình học được dựng bằng code Python trong Blender 5.2, kh�
 
 ## Ảnh render
 
-Render bằng Cycles, nền studio trắng.
+Render bằng Cycles, nền studio trắng. Bấm vào ảnh để xem bản gốc 2400 px.
 
 | | |
 |:---:|:---:|
-| ![3/4 sau](renders/02_hero_rear_three_quarter.jpg)<br>3/4 sau | ![3/4 trước bên trái](renders/04_front_three_quarter_left.jpg)<br>3/4 trước bên trái |
-| ![Hông phải](renders/03_side_right.jpg)<br>Hông phải | ![Hông trái](renders/07_side_left.jpg)<br>Hông trái |
-| ![Chính diện trước](renders/05_front.jpg)<br>Chính diện trước | ![Chính diện sau](renders/06_rear.jpg)<br>Chính diện sau |
-| ![Góc cao](renders/08_high_three_quarter.jpg)<br>Góc cao 3/4 | ![Bánh xe](renders/13_detail_wheel.jpg)<br>Bánh căm 64 nan, trống phanh có vành răng |
-| ![Mũi xe](renders/09_detail_nose.jpg)<br>Mũi xe: lưới tản nhiệt móng ngựa, đèn pha có lồng lưới | ![Khoang lái](renders/10_detail_cockpit.jpg)<br>Khoang lái: vô-lăng gỗ, táp-lô, đồng hồ |
-| ![Đuôi xe](renders/11_detail_tail.jpg)<br>Đuôi xe: bánh dự phòng, đèn hậu, lỗ thoát | ![Đèn phụ](renders/12_detail_side_lamp.jpg)<br>Đèn phụ bên hông phải |
-| ![Khớp ảnh bảo tàng 3/4 trước](renders/14_match_museum_f3q.jpg)<br>Cùng góc máy với ảnh bảo tàng (3/4 trước) | ![Khớp ảnh bảo tàng 3/4 sau](renders/15_match_museum_r3q.jpg)<br>Cùng góc máy với ảnh bảo tàng (3/4 sau) |
+| [![3/4 sau](renders/web/02_hero_rear_three_quarter.jpg)](renders/02_hero_rear_three_quarter.jpg)<br>3/4 sau | [![3/4 trước bên trái](renders/web/04_front_three_quarter_left.jpg)](renders/04_front_three_quarter_left.jpg)<br>3/4 trước bên trái |
+| [![Hông phải](renders/web/03_side_right.jpg)](renders/03_side_right.jpg)<br>Hông phải | [![Hông trái](renders/web/07_side_left.jpg)](renders/07_side_left.jpg)<br>Hông trái |
+| [![Chính diện trước](renders/web/05_front.jpg)](renders/05_front.jpg)<br>Chính diện trước | [![Chính diện sau](renders/web/06_rear.jpg)](renders/06_rear.jpg)<br>Chính diện sau |
+| [![Góc cao](renders/web/08_high_three_quarter.jpg)](renders/08_high_three_quarter.jpg)<br>Góc cao 3/4 | [![Bánh xe](renders/web/13_detail_wheel.jpg)](renders/13_detail_wheel.jpg)<br>Bánh căm 64 nan, trống phanh có vành răng |
+| [![Mũi xe](renders/web/09_detail_nose.jpg)](renders/09_detail_nose.jpg)<br>Mũi xe: lưới tản nhiệt móng ngựa, đèn pha có lồng lưới | [![Khoang lái](renders/web/10_detail_cockpit.jpg)](renders/10_detail_cockpit.jpg)<br>Khoang lái: vô-lăng gỗ, táp-lô, đồng hồ |
+| [![Đuôi xe](renders/web/11_detail_tail.jpg)](renders/11_detail_tail.jpg)<br>Đuôi xe: bánh dự phòng, đèn hậu, lỗ thoát | [![Đèn phụ](renders/web/12_detail_side_lamp.jpg)](renders/12_detail_side_lamp.jpg)<br>Đèn phụ bên hông phải |
+| [![Khớp ảnh bảo tàng 3/4 trước](renders/web/14_match_museum_f3q.jpg)](renders/14_match_museum_f3q.jpg)<br>Cùng góc máy với ảnh bảo tàng (3/4 trước) | [![Khớp ảnh bảo tàng 3/4 sau](renders/web/15_match_museum_r3q.jpg)](renders/15_match_museum_r3q.jpg)<br>Cùng góc máy với ảnh bảo tàng (3/4 sau) |
 
 ## Kích thước chính
 
@@ -71,7 +71,7 @@ Mô hình được dựng bởi Claude (Anthropic) điều khiển Blender qua M
 index.html            trang xem 3D (GitHub Pages + model-viewer)
 model/57G_Tank.glb    mô hình có màu (glTF 2.0, nén Draco)
 model/57G_Tank.stl    mô hình một màu cho trình xem STL của GitHub
-renders/              15 ảnh render và ảnh tổng hợp
+renders/              15 ảnh render 2400 px và ảnh tổng hợp (bản thu nhỏ cho README ở renders/web/)
 scripts/build/        mã dựng thân xe và chi tiết (Python, numpy, scikit-image, bpy)
 scripts/blender/      các text block có trong file .blend
 scripts/render/       script render nền và danh sách camera
