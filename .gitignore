@@ -1,0 +1,10 @@
+# Blender autosaves and backups
+*.blend1
+*.blend2
+# the full scene is published as a Release asset instead of being committed
+*.blend
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store
+renders/out/

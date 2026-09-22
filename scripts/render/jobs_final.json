@@ -1,0 +1,137 @@
+[
+ {
+  "cam": "CAM_F3Q",
+  "res": [
+   2400,
+   1350
+  ],
+  "spp": 224,
+  "out": "renders/out/01_hero_front_three_quarter"
+ },
+ {
+  "cam": "CAM_R3Q",
+  "res": [
+   2400,
+   1350
+  ],
+  "spp": 224,
+  "out": "renders/out/02_hero_rear_three_quarter"
+ },
+ {
+  "cam": "CAM_SIDE_R",
+  "res": [
+   2400,
+   788
+  ],
+  "spp": 192,
+  "out": "renders/out/03_side_right"
+ },
+ {
+  "cam": "CAM_F3Q_L",
+  "res": [
+   2400,
+   1350
+  ],
+  "spp": 224,
+  "out": "renders/out/04_front_three_quarter_left"
+ },
+ {
+  "cam": "CAM_FRONT",
+  "res": [
+   1800,
+   1166
+  ],
+  "spp": 192,
+  "out": "renders/out/05_front"
+ },
+ {
+  "cam": "CAM_REAR",
+  "res": [
+   1800,
+   1200
+  ],
+  "spp": 192,
+  "out": "renders/out/06_rear"
+ },
+ {
+  "cam": "CAM_SIDE_L",
+  "res": [
+   2400,
+   746
+  ],
+  "spp": 192,
+  "out": "renders/out/07_side_left"
+ },
+ {
+  "cam": "CAM_HIGH",
+  "res": [
+   2400,
+   1600
+  ],
+  "spp": 192,
+  "out": "renders/out/08_high_three_quarter"
+ },
+ {
+  "cam": "CAM_NOSE",
+  "res": [
+   2400,
+   1600
+  ],
+  "spp": 192,
+  "out": "renders/out/09_detail_nose"
+ },
+ {
+  "cam": "CAM_COCKPIT2",
+  "res": [
+   2400,
+   1600
+  ],
+  "spp": 192,
+  "out": "renders/out/10_detail_cockpit"
+ },
+ {
+  "cam": "CAM_TAIL",
+  "res": [
+   2400,
+   1600
+  ],
+  "spp": 192,
+  "out": "renders/out/11_detail_tail"
+ },
+ {
+  "cam": "CAM_SIDELAMP",
+  "res": [
+   2400,
+   1600
+  ],
+  "spp": 192,
+  "out": "renders/out/12_detail_side_lamp"
+ },
+ {
+  "cam": "CAM_WHEEL",
+  "res": [
+   2000,
+   1500
+  ],
+  "spp": 192,
+  "out": "renders/out/13_detail_wheel"
+ },
+ {
+  "cam": "CAM_F3Q_MATCH",
+  "res": [
+   2400,
+   782
+  ],
+  "spp": 192,
+  "out": "renders/out/14_match_museum_f3q"
+ },
+ {
+  "cam": "CAM_R3Q_MATCH",
+  "res": [
+   2400,
+   766
+  ],
+  "spp": 192,
+  "out": "renders/out/15_match_museum_r3q"
+ }
+]

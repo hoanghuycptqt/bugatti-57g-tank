@@ -1,0 +1,12 @@
+{
+  "name": "bugatti-57g-tank-web-export",
+  "private": true,
+  "type": "module",
+  "description": "Draco compression of the web GLB: node compress.mjs in.glb out.glb 16 12",
+  "dependencies": {
+    "@gltf-transform/core": "^4.0.0",
+    "@gltf-transform/extensions": "^4.0.0",
+    "@gltf-transform/functions": "^4.0.0",
+    "draco3dgltf": "^1.5.7"
+  }
+}

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bugatti Type 57G “Tank” 1937 – Xem 3D</title>
+<meta name="description" content="Mô hình 3D Bugatti Type 57G Tank 1937 (xe thắng Le Mans 1937), dựng từ đầu trong Blender. Xoay, phóng to và xem chi tiết ngay trên trình duyệt.">
+<meta property="og:title" content="Bugatti Type 57G “Tank” 1937 – Xem 3D">
+<meta property="og:image" content="renders/01_hero_front_three_quarter.jpg">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.3.1/dist/model-viewer.min.js"></script>
+<style>
+  :root { --bg1: #fdfdfe; --bg2: #d9dee5; --ink: #1c2431; --muted: #5a6577; --accent: #2f5d9e; --panel: rgba(255,255,255,.82); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg2); color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  model-viewer { width: 100%; height: 100%; display: block;
+    background: radial-gradient(ellipse at 50% 42%, var(--bg1) 0%, #eef1f4 45%, var(--bg2) 100%);
+    --progress-bar-color: var(--accent); --progress-bar-height: 3px; }
+  .card { background: var(--panel); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-radius: 14px; box-shadow: 0 2px 14px rgba(20,30,50,.10); }
+  header { position: fixed; top: 16px; left: 16px; max-width: min(460px, calc(100% - 32px)); padding: 12px 16px; }
+  h1 { font-size: 17px; line-height: 1.3; margin: 0 0 4px; font-weight: 650; }
+  header p { margin: 0; font-size: 13px; line-height: 1.45; color: var(--muted); }
+  header a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  header a:hover { text-decoration: underline; }
+  nav { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 6px; width: max-content; max-width: calc(100% - 32px); padding: 6px; }
+  nav button { font: inherit; font-size: 13px; border: 0; border-radius: 999px; padding: 8px 13px; cursor: pointer;
+    background: transparent; color: var(--ink); white-space: nowrap; }
+  nav button:hover { background: rgba(28,36,49,.08); }
+  nav button.on { background: var(--ink); color: #fff; }
+  nav .sep { width: 1px; background: rgba(28,36,49,.15); margin: 4px 2px; }
+  #status { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); padding: 14px 18px; font-size: 14px;
+    color: var(--muted); text-align: center; pointer-events: none; transition: opacity .4s; }
+  #status.hide { opacity: 0; }
+  @media (max-width: 560px) {
+    header { top: 10px; left: 10px; padding: 10px 12px; } h1 { font-size: 15px; } header p { font-size: 12px; }
+    nav { bottom: 10px; gap: 4px; } nav button { font-size: 12px; padding: 7px 10px; }
+  }
+</style>
+</head>
+<body>
+<model-viewer id="mv" src="model/57G_Tank.glb" alt="Mô hình 3D Bugatti Type 57G Tank 1937"
+  camera-controls touch-action="none" interaction-prompt="none"
+  camera-orbit="-48deg 76deg auto" min-camera-orbit="auto 12deg 1.2m" max-camera-orbit="auto 93deg 30m"
+  field-of-view="28deg" min-field-of-view="10deg" max-field-of-view="40deg"
+  shadow-intensity="1.1" shadow-softness="0.75" exposure="0.8" environment-image="neutral" tone-mapping="neutral"
+  auto-rotate auto-rotate-delay="4000" rotation-per-second="9deg" interpolation-decay="120">
+</model-viewer>
+
+<header class="card">
+  <h1>Bugatti Type 57G “Tank” · 1937</h1>
+  <p>Xe thắng 24 Giờ Le Mans 1937, khung 57335. Mô hình dựng từ đầu bằng Blender + Python.
+     Kéo để xoay, cuộn hoặc chụm hai ngón để phóng to, chuột phải để dời khung.
+     <a href="https://github.com/hoanghuycptqt/bugatti-57g-tank">Mã nguồn và ảnh render →</a></p>
+</header>
+
+<div id="status" class="card">Đang tải mô hình 3D… <span id="pct">0%</span></div>
+
+<nav class="card" id="views">
+  <button data-o="-48deg 76deg auto" class="on">3/4 trước</button>
+  <button data-o="-126deg 76deg auto">3/4 sau</button>
+  <button data-o="-90deg 88deg auto">Hông phải</button>
+  <button data-o="90deg 88deg auto">Hông trái</button>
+  <button data-o="0deg 86deg auto">Trước</button>
+  <button data-o="180deg 86deg auto">Sau</button>
+  <button data-o="-35deg 38deg auto">Trên cao</button>
+  <button data-o="-24deg 80deg 2.9m" data-t="0m 0.52m 1.95m">Mũi xe</button>
+  <button data-o="162deg 52deg 2.6m" data-t="-0.1m 0.86m -0.62m">Khoang lái</button>
+  <button data-o="-150deg 74deg 3.1m" data-t="0m 0.5m -2.3m">Đuôi xe</button>
+  <span class="sep"></span>
+  <button id="spin" class="on" title="Tự xoay">Tự xoay</button>
+</nav>
+
+<script>
+  const mv = document.getElementById('mv');
+  const status = document.getElementById('status'), pct = document.getElementById('pct');
+  mv.addEventListener('progress', e => { pct.textContent = Math.round(e.detail.totalProgress * 100) + '%'; });
+  mv.addEventListener('load', () => { status.classList.add('hide'); });
+  mv.addEventListener('error', () => { status.textContent = 'Không tải được mô hình. Hãy thử tải lại trang.'; });
+  const views = [...document.querySelectorAll('#views button[data-o]')];
+  // distance that keeps the whole car in frame for the current window shape
+  const fitR = () => { const a = Math.max(0.3, mv.clientWidth / Math.max(1, mv.clientHeight));
+    return Math.min(26, Math.max(7.6, 11.5 / a)).toFixed(2) + 'm'; };
+  const orbitOf = b => b.dataset.o.replace('auto', fitR());
+  function go(b) {
+    views.forEach(x => x.classList.toggle('on', x === b));
+    mv.cameraTarget = b.dataset.t || 'auto auto auto';
+    mv.cameraOrbit = orbitOf(b);
+    mv.fieldOfView = b.dataset.t ? '32deg' : '28deg';
+  }
+  mv.setAttribute('camera-orbit', orbitOf(views[0]));
+  views.forEach(b => b.addEventListener('click', () => { go(b); setSpin(false); }));
+  addEventListener('resize', () => { const b = views.find(x => x.classList.contains('on')); if (b && !b.dataset.t) go(b); });
+  const spin = document.getElementById('spin');
+  function setSpin(on) { mv.autoRotate = on; spin.classList.toggle('on', on); }
+  spin.addEventListener('click', () => setSpin(!mv.autoRotate));
+  mv.addEventListener('camera-change', e => { if (e.detail.source === 'user-interaction') views.forEach(x => x.classList.remove('on')); });
+</script>
+</body>
+</html>
