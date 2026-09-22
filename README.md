@@ -1,100 +1,100 @@
-# Bugatti Type 57G “Tank” – mô hình 3D dựng từ đầu
+# Bugatti Type 57G “Tank” – a 3D model built from scratch
 
-[![Bugatti Type 57G Tank – góc 3/4 trước](renders/web/01_hero_front_three_quarter.jpg)](renders/01_hero_front_three_quarter.jpg)
+[![Bugatti Type 57G Tank – front three-quarter view](renders/web/01_hero_front_three_quarter.jpg)](renders/01_hero_front_three_quarter.jpg)
 
-Mô hình 3D chiếc Bugatti Type 57G “Tank” khung 57335 (Simeone Museum ghi là 57G 01). Xe chế tạo năm 1936 và thắng 24 Giờ Le Mans 1937 với Jean-Pierre Wimille và Robert Benoist. Đây là chiếc Tank duy nhất còn tồn tại, hiện trưng bày tại Simeone Foundation Automotive Museum (Philadelphia).
+A 3D model of the Bugatti Type 57G “Tank”, chassis 57335 (listed by the Simeone Museum as 57G 01). The car was built in 1936 and won the 1937 24 Hours of Le Mans with Jean-Pierre Wimille and Robert Benoist. It is the only surviving Tank and is on display at the Simeone Foundation Automotive Museum in Philadelphia.
 
-Toàn bộ hình học được dựng bằng code Python trong Blender 5.2, không dùng mô hình 3D tải từ mạng. Ảnh chụp xe thật chỉ dùng để đối chiếu kích thước và đường nét.
+All geometry was built with Python code in Blender 5.2; no downloaded 3D models were used. Photos of the real car served only as a reference for dimensions and lines.
 
-## Xem 3D
+## View in 3D
 
 | | |
 |---|---|
-| **[Mở trình xem 3D có màu](https://hoanghuycptqt.github.io/bugatti-57g-tank/)** | Xoay, phóng to, chọn nhanh các góc (mũi xe, khoang lái, đuôi xe…). Chạy được trên máy tính và điện thoại. |
-| **[Xem 3D ngay trên GitHub](model/57G_Tank.stl)** | Trình xem STL có sẵn của GitHub: bản xem nhanh một màu (~17 nghìn tam giác, 1,9 MB). Bản chi tiết để tải về hoặc in 3D: [`57G_Tank_hd.stl`](model/57G_Tank_hd.stl) (~184 nghìn tam giác, 9,2 MB). |
-| **[Tải file Blender đầy đủ](https://github.com/hoanghuycptqt/bugatti-57g-tank/releases/latest)** | `Bugatti_57G_Tank.blend` (67,5 MB) gồm vật liệu, studio và 16 camera. |
-| [`model/57G_Tank.glb`](model/57G_Tank.glb) | glTF 2.0 nén Draco, 2,7 MB, khoảng 0,92 triệu tam giác. Dùng được cho web, AR, three.js, Unity, Unreal… |
+| **[Open the colour 3D viewer](https://hoanghuycptqt.github.io/bugatti-57g-tank/)** | Rotate, zoom and jump to preset views (nose, cockpit, tail…). Works on desktop and mobile. |
+| **[View in 3D on GitHub](model/57G_Tank.stl)** | GitHub’s built-in STL viewer: a quick single-colour preview (~17k triangles, 1.9 MB). Detailed version for download or 3D printing: [`57G_Tank_hd.stl`](model/57G_Tank_hd.stl) (~184k triangles, 9.2 MB). |
+| **[Download the full Blender file](https://github.com/hoanghuycptqt/bugatti-57g-tank/releases/latest)** | `Bugatti_57G_Tank.blend` (67.5 MB) with materials, studio and 16 cameras. |
+| [`model/57G_Tank.glb`](model/57G_Tank.glb) | glTF 2.0 with Draco compression, 2.7 MB, about 0.92 million triangles. Works in web viewers, AR, three.js, Unity, Unreal… |
 
-## Ảnh render
+## Renders
 
-Render bằng Cycles, nền studio trắng. Bấm vào ảnh để xem bản gốc 2400 px.
+Rendered in Cycles on a white studio background. Click an image to open the 2400 px original.
 
 | | |
 |:---:|:---:|
-| [![3/4 sau](renders/web/02_hero_rear_three_quarter.jpg)](renders/02_hero_rear_three_quarter.jpg)<br>3/4 sau | [![3/4 trước bên trái](renders/web/04_front_three_quarter_left.jpg)](renders/04_front_three_quarter_left.jpg)<br>3/4 trước bên trái |
-| [![Hông phải](renders/web/03_side_right.jpg)](renders/03_side_right.jpg)<br>Hông phải | [![Hông trái](renders/web/07_side_left.jpg)](renders/07_side_left.jpg)<br>Hông trái |
-| [![Chính diện trước](renders/web/05_front.jpg)](renders/05_front.jpg)<br>Chính diện trước | [![Chính diện sau](renders/web/06_rear.jpg)](renders/06_rear.jpg)<br>Chính diện sau |
-| [![Góc cao](renders/web/08_high_three_quarter.jpg)](renders/08_high_three_quarter.jpg)<br>Góc cao 3/4 | [![Bánh xe](renders/web/13_detail_wheel.jpg)](renders/13_detail_wheel.jpg)<br>Bánh căm 64 nan, trống phanh có vành răng |
-| [![Mũi xe](renders/web/09_detail_nose.jpg)](renders/09_detail_nose.jpg)<br>Mũi xe: lưới tản nhiệt móng ngựa, đèn pha có lồng lưới | [![Khoang lái](renders/web/10_detail_cockpit.jpg)](renders/10_detail_cockpit.jpg)<br>Khoang lái: vô-lăng gỗ, táp-lô, đồng hồ |
-| [![Đuôi xe](renders/web/11_detail_tail.jpg)](renders/11_detail_tail.jpg)<br>Đuôi xe: bánh dự phòng, đèn hậu, lỗ thoát | [![Đèn phụ](renders/web/12_detail_side_lamp.jpg)](renders/12_detail_side_lamp.jpg)<br>Đèn phụ bên hông phải |
-| [![Khớp ảnh bảo tàng 3/4 trước](renders/web/14_match_museum_f3q.jpg)](renders/14_match_museum_f3q.jpg)<br>Cùng góc máy với ảnh bảo tàng (3/4 trước) | [![Khớp ảnh bảo tàng 3/4 sau](renders/web/15_match_museum_r3q.jpg)](renders/15_match_museum_r3q.jpg)<br>Cùng góc máy với ảnh bảo tàng (3/4 sau) |
+| [![Rear three-quarter](renders/web/02_hero_rear_three_quarter.jpg)](renders/02_hero_rear_three_quarter.jpg)<br>Rear three-quarter | [![Front three-quarter, left side](renders/web/04_front_three_quarter_left.jpg)](renders/04_front_three_quarter_left.jpg)<br>Front three-quarter, left side |
+| [![Right side](renders/web/03_side_right.jpg)](renders/03_side_right.jpg)<br>Right side | [![Left side](renders/web/07_side_left.jpg)](renders/07_side_left.jpg)<br>Left side |
+| [![Front](renders/web/05_front.jpg)](renders/05_front.jpg)<br>Front | [![Rear](renders/web/06_rear.jpg)](renders/06_rear.jpg)<br>Rear |
+| [![High angle](renders/web/08_high_three_quarter.jpg)](renders/08_high_three_quarter.jpg)<br>High three-quarter | [![Wheel](renders/web/13_detail_wheel.jpg)](renders/13_detail_wheel.jpg)<br>64-spoke wire wheel and finned brake drum |
+| [![Nose](renders/web/09_detail_nose.jpg)](renders/09_detail_nose.jpg)<br>Nose: horseshoe grille, headlamps with mesh stone guards | [![Cockpit](renders/web/10_detail_cockpit.jpg)](renders/10_detail_cockpit.jpg)<br>Cockpit: wooden steering wheel, dashboard, gauges |
+| [![Tail](renders/web/11_detail_tail.jpg)](renders/11_detail_tail.jpg)<br>Tail: spare wheel, tail lamps, vent holes | [![Side lamp](renders/web/12_detail_side_lamp.jpg)](renders/12_detail_side_lamp.jpg)<br>Auxiliary lamp on the right-hand side |
+| [![Museum match, front three-quarter](renders/web/14_match_museum_f3q.jpg)](renders/14_match_museum_f3q.jpg)<br>Same camera angle as the museum photo (front three-quarter) | [![Museum match, rear three-quarter](renders/web/15_match_museum_r3q.jpg)](renders/15_match_museum_r3q.jpg)<br>Same camera angle as the museum photo (rear three-quarter) |
 
-## Kích thước chính
+## Main dimensions
 
-| Thông số | Giá trị |
+| Item | Value |
 |---|---|
-| Chiều dài cơ sở | 2,98 m |
-| Vệt bánh trước/sau | 1,35 m |
-| Dài thân | ~4,75 m (tính cả lồng đèn pha và đèn hậu ~4,80 m) |
-| Rộng tổng | ~1,63 m |
-| Cao thân (nắp capo) | ~1,05 m |
-| Cao tới mép kính chắn gió | ~1,21 m |
-| Lốp | 5.25/5.50-19, bán kính ~0,395–0,40 m |
+| Wheelbase | 2.98 m |
+| Front/rear track | 1.35 m |
+| Body length | ~4.75 m (~4.80 m including the headlamp guards and tail lamps) |
+| Overall width | ~1.63 m |
+| Body height (bonnet) | ~1.05 m |
+| Height to the top of the windscreen | ~1.21 m |
+| Tyres | 5.25/5.50-19, radius ~0.395–0.40 m |
 
-## Độ khớp với xe thật
+## Match with the real car
 
-- Hình bóng nhìn từ hai bên, trước và sau được so từng cột điểm ảnh với ảnh của Simeone. Sai lệch thường 1–3 cm.
-- Camera của ảnh 3/4 trước và 3/4 sau được giải ngược bằng PnP từ 10 điểm mốc (tâm bánh, đèn, gương, kính…). Sai số trung bình 6,7 px (3/4 trước) và 3,9 px (3/4 sau) trên ảnh rộng 1200 px.
-- Ảnh 14 và 15 ở trên render đúng các góc máy đó, để đặt cạnh ảnh bảo tàng mà so.
+- The side, front and rear silhouettes were compared column by column against the Simeone photos. Typical deviation is 1–3 cm.
+- The cameras of the front and rear three-quarter photos were recovered with PnP from 10 landmarks (wheel centres, lamps, mirrors, windscreen…). Mean error is 6.7 px (front three-quarter) and 3.9 px (rear three-quarter) on 1200 px wide images.
+- Renders 14 and 15 above use those camera angles, so they can be placed side by side with the museum photos.
 
-## Chi tiết đã dựng
+## Modelled details
 
-- **Thân xe:** sơn hai màu xanh nhạt và xanh navy; mảng navy chéo ở sườn, vùng lõm bánh dự phòng và chữ V navy dưới đuôi; khe hở tấm vỏ (cửa, mối nối sườn, mép nắp capo), đinh tán, cửa gió dập trên capo.
-- **Mũi xe:** lưới tản nhiệt hình móng ngựa bằng lưới đan thật, hốc gió dưới có 2 đèn sương mù, đèn pha có lồng lưới bảo vệ và giá đỡ, 4 ô gió trên mỗi tai trước, dây da khóa nắp capo.
-- **Sườn và đuôi:** đèn phụ bên phải nằm trong hốc lõm, nắp xăng đôi, khe gió chéo hai bên sườn, cửa gió đuôi lưới thưa, 4 đèn hậu và 11 lỗ thoát, bánh dự phòng nằm nghiêng trong đuôi, ống xả chạy dưới sườn trái.
-- **Khoang lái:** kính chắn gió cong, gương giữa và 2 gương tròn, táp-lô sơn đen nhăn, đồng hồ chữ Pháp, vô-lăng gỗ 4 chấu, ghế bucket da đen, cần số núm ngà, tên hai tay lái Wimille và Benoist trên nắp capo như trên xe thật.
-- **Bánh xe:** bánh căm 64 nan, trống phanh nhôm có vành răng, ốc tai thỏ.
+- **Body:** two-tone light blue and navy paint; the diagonal navy sweep on the flanks, the spare-wheel recess and the navy V below it; panel gaps (doors, side seams, bonnet edges), rivets and pressed louvres on the bonnet.
+- **Nose:** horseshoe grille in real woven mesh, lower intake with two driving lamps, headlamps with mesh stone guards and brackets, four vents on each front wing, leather bonnet straps.
+- **Sides and tail:** recessed auxiliary lamp on the right, twin fuel fillers, diagonal side slots, coarse-mesh tail vents, four tail lamps and eleven vent holes, spare wheel set at an angle into the tail, exhaust running under the left side.
+- **Cockpit:** curved windscreen, central mirror and two round mirrors, black crackle-finish dashboard, French-lettered gauges, four-spoke wooden steering wheel, black leather bucket seats, ivory gear knob, and the names of the two drivers, Wimille and Benoist, on the bonnet as on the real car.
+- **Wheels:** 64-spoke wire wheels, finned aluminium brake drums, eared knock-off spinners.
 
-## Cách dựng
+## How it was built
 
-1. **Thân xe** là một hàm khoảng cách có dấu (SDF) viết bằng numpy: thân, nắp capo và bốn tai xe là các mặt cắt siêu elip thay đổi dọc chiều dài, ghép với nhau bằng phép hợp mềm. Các hốc (lưới tản nhiệt, cửa gió, bánh dự phòng) được khoét bằng phép trừ mềm.
-2. Bề mặt được lấy ra bằng marching cubes với ô 5 mm (khoảng 2,2 triệu tam giác), rồi chiếu Newton lên đúng mặt và tính pháp tuyến giải tích.
-3. **Màu sơn, khe hở và vùng tối** được tính thành các trường số trên từng đỉnh và đưa vào shader Cycles, nên đường ranh sắc nét mà không cần texture.
-4. **Chi tiết** (lưới đan, đèn, bánh căm, khoang lái…) được sinh bằng bmesh trong `scripts/build/`.
-5. **Bản web:** thân xe giảm còn khoảng 0,48 triệu tam giác rồi được cắt đúng theo đường ranh màu sơn và khe hở, nên GLB chỉ dùng màu phẳng, không cần texture, và nén Draco còn 2,7 MB. Trang xem 3D tải file này qua jsDelivr cho nhanh. Bản STL xem nhanh là file dạng text, đơn vị mm, giữ dưới 2 MB: GitHub nhúng sẵn file text cỡ này vào trang nên hiển thị được cả khi mạng tới GitHub chậm, còn file nhị phân lớn được tải riêng và có thể báo “Unable to render code block”. Bản HD là file nhị phân (đơn vị mét) với thân xe được chia lưới đều lại cho đẹp khi hiển thị phẳng.
+1. **The body** is a signed distance function (SDF) written in numpy: the main body, bonnet and four wings are superellipse cross-sections that change along the length, joined with smooth unions. The recesses (grille, vents, spare wheel) are cut with smooth subtraction.
+2. The surface is extracted with marching cubes on a 5 mm grid (about 2.2 million triangles), then projected onto the exact surface with Newton steps and given analytic normals.
+3. **Paint, panel gaps and dark areas** are computed as scalar fields on every vertex and fed to a Cycles shader, so the boundaries stay sharp without textures.
+4. **Details** (woven mesh, lamps, wire wheels, cockpit…) are generated with bmesh in `scripts/build/`.
+5. **Web version:** the body is reduced to about 0.48 million triangles and then cut exactly along the paint boundaries and panel gaps, so the GLB needs only flat colours, no textures, and compresses to 2.7 MB with Draco. The viewer page loads it through jsDelivr for speed. The quick-preview STL is a text file in millimetres kept under 2 MB: GitHub embeds text files of that size in the page, so the preview works even on a slow connection, while large binary files are fetched separately and may show “Unable to render code block”. The HD version is a binary file (in metres) whose body was remeshed evenly so it looks good with flat shading.
 
-Mô hình được dựng bởi Claude (Anthropic) điều khiển Blender qua MCP. Toàn bộ mã nằm trong `scripts/`; các script ghi đường dẫn tuyệt đối của máy dựng, cần sửa lại trước khi chạy.
+The model was built by Claude (Anthropic) driving Blender through MCP. All the code is in `scripts/`; the scripts contain absolute paths from the build machine and need editing before they are run.
 
-## Cấu trúc thư mục
+## Repository layout
 
 ```
-index.html            trang xem 3D (GitHub Pages + model-viewer)
-model/57G_Tank.glb    mô hình có màu (glTF 2.0, nén Draco)
-model/57G_Tank.stl    bản xem nhanh cho trình xem STL của GitHub (text, đơn vị mm)
-model/57G_Tank_hd.stl bản STL chi tiết (nhị phân, đơn vị mét), để tải về hoặc in 3D
-renders/              15 ảnh render 2400 px và ảnh tổng hợp (bản thu nhỏ cho README ở renders/web/)
-scripts/build/        mã dựng thân xe và chi tiết (Python, numpy, scikit-image, bpy)
-scripts/blender/      các text block có trong file .blend
-scripts/render/       script render nền và danh sách camera
-scripts/web/          xuất bản web (GLB, STL)
+index.html            3D viewer page (GitHub Pages + model-viewer)
+model/57G_Tank.glb    colour model (glTF 2.0, Draco-compressed)
+model/57G_Tank.stl    quick preview for GitHub's STL viewer (text, millimetres)
+model/57G_Tank_hd.stl detailed STL (binary, metres) for download or 3D printing
+renders/              15 renders at 2400 px and a contact sheet (README thumbnails in renders/web/)
+scripts/build/        body and detail modelling code (Python, numpy, scikit-image, bpy)
+scripts/blender/      text blocks stored in the .blend file
+scripts/render/       background render script and camera list
+scripts/web/          web export (GLB, STL)
 ```
 
-## Render lại
+## Re-rendering
 
-Tải `Bugatti_57G_Tank.blend` ở mục [Releases](https://github.com/hoanghuycptqt/bugatti-57g-tank/releases/latest), đặt vào thư mục gốc của repo rồi chạy:
+Download `Bugatti_57G_Tank.blend` from [Releases](https://github.com/hoanghuycptqt/bugatti-57g-tank/releases/latest), put it in the repository root and run:
 
 ```
 blender -b Bugatti_57G_Tank.blend -P scripts/render/render_final.py -- scripts/render/jobs_final.json
 ```
 
-Ảnh ra thư mục `renders/out/`. Script chọn GPU Metal (máy Mac); trên máy khác, bước này được bỏ qua và Cycles dùng thiết bị đang cài trong Blender.
+Images are written to `renders/out/`. The script selects the Metal GPU (Mac); on other machines that step is skipped and Cycles uses the device configured in Blender.
 
-## Thương hiệu
+## Trademarks
 
-Mô hình không có logo hay chữ thương hiệu: không có huy hiệu trên mũi xe, không có chữ trên vành, trên lốp hay trên mặt đồng hồ. Tên “Bugatti” và “Type 57G Tank” chỉ dùng để gọi đúng chiếc xe lịch sử; dự án này không liên quan đến Bugatti.
+The model carries no logos or brand lettering: there is no badge on the nose and no text on the rims, the tyres or the gauge faces. The names “Bugatti” and “Type 57G Tank” are used only to identify the historic car; this project is not affiliated with Bugatti.
 
-## Nguồn tham khảo
+## References
 
-- Simeone Foundation Automotive Museum – [1936 Bugatti 57G “Tank”](https://simeonemuseum.org/collection/1936-bugatti-57g-tank/). Ảnh © Michael Furman, chỉ dùng để đối chiếu và không có trong repo này.
+- Simeone Foundation Automotive Museum – [1936 Bugatti 57G “Tank”](https://simeonemuseum.org/collection/1936-bugatti-57g-tank/). Photos © Michael Furman, used only for reference and not included in this repository.
 - Wikipedia – [Bugatti Type 57](https://en.wikipedia.org/wiki/Bugatti_Type_57)
 - Classic Driver – [Le Mans-winning Bugatti Tank: first and last, a rare breed](https://www.classicdriver.com/en/article/cars/le-mans-winning-bugatti-tank-first-and-last-a-rare-breed)

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bugatti Type 57G “Tank” 1937 – Xem 3D</title>
-<meta name="description" content="Mô hình 3D Bugatti Type 57G Tank 1937 (xe thắng Le Mans 1937), dựng từ đầu trong Blender. Xoay, phóng to và xem chi tiết ngay trên trình duyệt.">
-<meta property="og:title" content="Bugatti Type 57G “Tank” 1937 – Xem 3D">
+<title>Bugatti Type 57G “Tank” 1937 – 3D viewer</title>
+<meta name="description" content="3D model of the Bugatti Type 57G Tank, winner of the 1937 24 Hours of Le Mans, built from scratch in Blender. Rotate, zoom and explore the details in your browser.">
+<meta property="og:title" content="Bugatti Type 57G “Tank” 1937 – 3D viewer">
 <meta property="og:image" content="https://hoanghuycptqt.github.io/bugatti-57g-tank/renders/web/01_hero_front_three_quarter.jpg">
 <meta property="og:url" content="https://hoanghuycptqt.github.io/bugatti-57g-tank/">
 <meta name="twitter:card" content="summary_large_image">
@@ -44,7 +44,7 @@
 </style>
 </head>
 <body>
-<model-viewer id="mv" src="https://cdn.jsdelivr.net/gh/hoanghuycptqt/bugatti-57g-tank@v1.0/model/57G_Tank.glb" alt="Mô hình 3D Bugatti Type 57G Tank 1937"
+<model-viewer id="mv" src="https://cdn.jsdelivr.net/gh/hoanghuycptqt/bugatti-57g-tank@v1.0/model/57G_Tank.glb" alt="3D model of the Bugatti Type 57G Tank (1937)"
   camera-controls touch-action="none" interaction-prompt="none"
   camera-orbit="-48deg 76deg auto" min-camera-orbit="auto 12deg 1.2m" max-camera-orbit="auto 93deg 30m"
   field-of-view="28deg" min-field-of-view="10deg" max-field-of-view="40deg"
@@ -54,26 +54,26 @@
 
 <header class="card">
   <h1>Bugatti Type 57G “Tank” · 1937</h1>
-  <p>Xe thắng 24 Giờ Le Mans 1937, khung 57335. Mô hình dựng từ đầu bằng Blender + Python.
-     Kéo để xoay, cuộn hoặc chụm hai ngón để phóng to, chuột phải để dời khung.
-     <a href="https://github.com/hoanghuycptqt/bugatti-57g-tank">Mã nguồn và ảnh render →</a></p>
+  <p>Winner of the 1937 24 Hours of Le Mans, chassis 57335. Built from scratch with Blender + Python.
+     Drag to rotate, scroll or pinch to zoom, right-drag to pan.
+     <a href="https://github.com/hoanghuycptqt/bugatti-57g-tank">Source code and renders →</a></p>
 </header>
 
-<div id="status" class="card">Đang tải mô hình 3D… <span id="pct">0%</span></div>
+<div id="status" class="card">Loading 3D model… <span id="pct">0%</span></div>
 
 <nav class="card" id="views">
-  <button data-o="-48deg 76deg auto" class="on">3/4 trước</button>
-  <button data-o="-126deg 76deg auto">3/4 sau</button>
-  <button data-o="-90deg 88deg auto">Hông phải</button>
-  <button data-o="90deg 88deg auto">Hông trái</button>
-  <button data-o="0deg 86deg auto">Trước</button>
-  <button data-o="180deg 86deg auto">Sau</button>
-  <button data-o="-35deg 38deg auto">Trên cao</button>
-  <button data-o="-24deg 80deg 2.9m" data-t="0m 0.52m 1.95m">Mũi xe</button>
-  <button data-o="162deg 52deg 2.6m" data-t="-0.1m 0.86m -0.62m">Khoang lái</button>
-  <button data-o="-150deg 74deg 3.1m" data-t="0m 0.5m -2.3m">Đuôi xe</button>
+  <button data-o="-48deg 76deg auto" class="on">Front 3/4</button>
+  <button data-o="-126deg 76deg auto">Rear 3/4</button>
+  <button data-o="-90deg 88deg auto">Right side</button>
+  <button data-o="90deg 88deg auto">Left side</button>
+  <button data-o="0deg 86deg auto">Front</button>
+  <button data-o="180deg 86deg auto">Rear</button>
+  <button data-o="-35deg 38deg auto">High</button>
+  <button data-o="-24deg 80deg 2.9m" data-t="0m 0.52m 1.95m">Nose</button>
+  <button data-o="162deg 52deg 2.6m" data-t="-0.1m 0.86m -0.62m">Cockpit</button>
+  <button data-o="-150deg 74deg 3.1m" data-t="0m 0.5m -2.3m">Tail</button>
   <span class="sep"></span>
-  <button id="spin" class="on" title="Tự xoay">Tự xoay</button>
+  <button id="spin" class="on" title="Auto-rotate">Auto-rotate</button>
 </nav>
 
 <script>
@@ -86,7 +86,7 @@
   mv.addEventListener('load', () => { status.classList.add('hide'); });
   mv.addEventListener('error', () => {
     if (!fellBack) { fellBack = true; mv.src = LOCAL; return; }
-    status.textContent = 'Không tải được mô hình. Hãy thử tải lại trang.';
+    status.textContent = 'Could not load the model. Please reload the page.';
   });
   const views = [...document.querySelectorAll('#views button[data-o]')];
   // distance that keeps the whole car in frame for the current window shape
