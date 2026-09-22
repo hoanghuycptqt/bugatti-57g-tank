@@ -3,13 +3,19 @@ import bpy, sys, numpy as np, os
 sys.path.insert(0, '/home/claude/tank/build')
 import preview as PV
 import fast_simplification as fs
-OUT = sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else '/home/claude/tank/build/web/57G_Tank.stl'
+args = sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+OUT = args[0] if args else '/home/claude/tank/build/web/57G_Tank.stl'
+BODY_NPZ = args[1] if len(args) > 1 else '/home/claude/tank/build/web/body_stl.npz'
+LITE = len(args) > 2 and args[2] == 'lite'      # light version for GitHub's viewer on slow connections
 BUDGET = 185000
 bpy.ops.wm.open_mainfile(filepath='/home/claude/tank/build/web/glb_scene.blend')
 SKIP = ('Grille_Mesh', 'PodVents_Mesh', 'Intake_Mesh', 'Headlamp_Guard_R', 'Headlamp_Guard_L', 'RearVents_Mesh',
         'Body', 'Lettering_Drivers', 'Hood_Rivets_Louvers', 'PodVents_Rivets')
 TARGET = {'_Tire': 2500, 'Seat_Back': 2200, '_Rim': 1800, 'SteeringWheel_Rim': 2200, '_Drum': 1200, 'SideLamp_Pod': 2000, 'SteeringWheel_Spokes': 1800}
 BODY_T = 90000
+if LITE:
+    TARGET = {'_Tire': 900, 'Seat_Back': 800, '_Rim': 700, 'SteeringWheel_Rim': 800, '_Drum': 500, 'SideLamp_Pod': 800, 'SteeringWheel_Spokes': 700}
+    BODY_T = 45000
 dg = bpy.context.evaluated_depsgraph_get()
 parts = []
 for o in bpy.data.objects:
@@ -20,7 +26,7 @@ for o in bpy.data.objects:
     M = np.array(o.matrix_world, dtype=np.float64)
     co = (co @ M[:3, :3].T + M[:3, 3]).astype(np.float32)
     parts.append((o.name, co, tri)); oe.to_mesh_clear()
-b = np.load('/home/claude/tank/build/web/body_stl.npz')
+b = np.load(BODY_NPZ)
 bv = PV.to_bl(b['v'].astype(np.float64)).astype(np.float32); bf = b['f'][:, ::-1].astype(np.int32)
 if len(bf) > 1.1*BODY_T: bv, bf = fs.simplify(bv, bf, target_reduction=1 - BODY_T/len(bf), agg=6)
 small = sum(len(t) for _, _, t in parts if len(t) <= 2500)
@@ -30,6 +36,8 @@ print('parts', len(parts), 'small tris', small, 'big tris', big, 'keep ratio %.3
 V, F, off = [bv], [bf], len(bv)
 for name, co, tri in parts:
     tgt = next((t for k, t in TARGET.items() if k in name), None)
+    if tgt is None and LITE and len(tri) > 400:
+        tgt = max(200, int(0.5*len(tri)))
     if tgt and len(tri) > tgt:
         co, tri = fs.simplify(co, tri, target_reduction=1 - tgt/len(tri), agg=5)
     V.append(co.astype(np.float32)); F.append(tri.astype(np.int64) + off); off += len(co)
