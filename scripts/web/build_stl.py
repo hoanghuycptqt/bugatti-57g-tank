@@ -6,16 +6,22 @@ import fast_simplification as fs
 args = sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
 OUT = args[0] if args else '/home/claude/tank/build/web/57G_Tank.stl'
 BODY_NPZ = args[1] if len(args) > 1 else '/home/claude/tank/build/web/body_stl.npz'
-LITE = len(args) > 2 and args[2] == 'lite'      # light version for GitHub's viewer on slow connections
+MODE = args[2] if len(args) > 2 else 'hd'
+LITE = MODE in ('lite', 'tiny')                  # lighter versions for GitHub's viewer
 BUDGET = 185000
 bpy.ops.wm.open_mainfile(filepath='/home/claude/tank/build/web/glb_scene.blend')
 SKIP = ('Grille_Mesh', 'PodVents_Mesh', 'Intake_Mesh', 'Headlamp_Guard_R', 'Headlamp_Guard_L', 'RearVents_Mesh',
         'Body', 'Lettering_Drivers', 'Hood_Rivets_Louvers', 'PodVents_Rivets')
 TARGET = {'_Tire': 2500, 'Seat_Back': 2200, '_Rim': 1800, 'SteeringWheel_Rim': 2200, '_Drum': 1200, 'SideLamp_Pod': 2000, 'SteeringWheel_Spokes': 1800}
 BODY_T = 90000
+GENERIC = 0.5
 if LITE:
     TARGET = {'_Tire': 900, 'Seat_Back': 800, '_Rim': 700, 'SteeringWheel_Rim': 800, '_Drum': 500, 'SideLamp_Pod': 800, 'SteeringWheel_Spokes': 700}
     BODY_T = 45000
+if MODE == 'tiny':
+    TARGET = {'_Tire': 500, 'Seat_Back': 400, '_Rim': 400, 'SteeringWheel_Rim': 400, '_Drum': 250, 'SideLamp_Pod': 400, 'SteeringWheel_Spokes': 300, '_Spokes': 1100}
+    GENERIC = 0.3
+    BODY_T = 26000
 dg = bpy.context.evaluated_depsgraph_get()
 parts = []
 for o in bpy.data.objects:
@@ -37,7 +43,7 @@ V, F, off = [bv], [bf], len(bv)
 for name, co, tri in parts:
     tgt = next((t for k, t in TARGET.items() if k in name), None)
     if tgt is None and LITE and len(tri) > 400:
-        tgt = max(200, int(0.5*len(tri)))
+        tgt = max(150, int(GENERIC*len(tri)))
     if tgt and len(tri) > tgt:
         co, tri = fs.simplify(co, tri, target_reduction=1 - tgt/len(tri), agg=5)
     V.append(co.astype(np.float32)); F.append(tri.astype(np.int64) + off); off += len(co)

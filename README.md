@@ -11,7 +11,7 @@ Toàn bộ hình học được dựng bằng code Python trong Blender 5.2, kh�
 | | |
 |---|---|
 | **[Mở trình xem 3D có màu](https://hoanghuycptqt.github.io/bugatti-57g-tank/)** | Xoay, phóng to, chọn nhanh các góc (mũi xe, khoang lái, đuôi xe…). Chạy được trên máy tính và điện thoại. |
-| **[Xem 3D ngay trên GitHub](model/57G_Tank.stl)** | Trình xem STL có sẵn của GitHub, mô hình một màu xám (~89 nghìn tam giác, 4,5 MB). Bản chi tiết hơn: [`57G_Tank_hd.stl`](model/57G_Tank_hd.stl) (~184 nghìn tam giác, 9,2 MB). Nếu mạng tới GitHub chậm, trình xem này có thể báo “Unable to render code block”; khi đó hãy dùng trình xem có màu ở dòng trên. |
+| **[Xem 3D ngay trên GitHub](model/57G_Tank.stl)** | Trình xem STL có sẵn của GitHub: bản xem nhanh một màu (~17 nghìn tam giác, 1,9 MB). Bản chi tiết để tải về hoặc in 3D: [`57G_Tank_hd.stl`](model/57G_Tank_hd.stl) (~184 nghìn tam giác, 9,2 MB). |
 | **[Tải file Blender đầy đủ](https://github.com/hoanghuycptqt/bugatti-57g-tank/releases/latest)** | `Bugatti_57G_Tank.blend` (67,5 MB) gồm vật liệu, studio và 16 camera. |
 | [`model/57G_Tank.glb`](model/57G_Tank.glb) | glTF 2.0 nén Draco, 2,7 MB, khoảng 0,92 triệu tam giác. Dùng được cho web, AR, three.js, Unity, Unreal… |
 
@@ -61,7 +61,7 @@ Render bằng Cycles, nền studio trắng. Bấm vào ảnh để xem bản g�
 2. Bề mặt được lấy ra bằng marching cubes với ô 5 mm (khoảng 2,2 triệu tam giác), rồi chiếu Newton lên đúng mặt và tính pháp tuyến giải tích.
 3. **Màu sơn, khe hở và vùng tối** được tính thành các trường số trên từng đỉnh và đưa vào shader Cycles, nên đường ranh sắc nét mà không cần texture.
 4. **Chi tiết** (lưới đan, đèn, bánh căm, khoang lái…) được sinh bằng bmesh trong `scripts/build/`.
-5. **Bản web:** thân xe giảm còn khoảng 0,48 triệu tam giác rồi được cắt đúng theo đường ranh màu sơn và khe hở, nên GLB chỉ dùng màu phẳng, không cần texture, và nén Draco còn 2,7 MB. Bản STL chia lưới đều lại thân xe (~45 nghìn tam giác ở bản nhẹ, ~98 nghìn ở bản HD) cho đẹp khi hiển thị phẳng, và giữ dưới 10 MB để GitHub hiển thị được.
+5. **Bản web:** thân xe giảm còn khoảng 0,48 triệu tam giác rồi được cắt đúng theo đường ranh màu sơn và khe hở, nên GLB chỉ dùng màu phẳng, không cần texture, và nén Draco còn 2,7 MB. Trang xem 3D tải file này qua jsDelivr cho nhanh. Bản STL xem nhanh là file dạng text, đơn vị mm, giữ dưới 2 MB: GitHub nhúng sẵn file text cỡ này vào trang nên hiển thị được cả khi mạng tới GitHub chậm, còn file nhị phân lớn được tải riêng và có thể báo “Unable to render code block”. Bản HD là file nhị phân (đơn vị mét) với thân xe được chia lưới đều lại cho đẹp khi hiển thị phẳng.
 
 Mô hình được dựng bởi Claude (Anthropic) điều khiển Blender qua MCP. Toàn bộ mã nằm trong `scripts/`; các script ghi đường dẫn tuyệt đối của máy dựng, cần sửa lại trước khi chạy.
 
@@ -70,8 +70,8 @@ Mô hình được dựng bởi Claude (Anthropic) điều khiển Blender qua M
 ```
 index.html            trang xem 3D (GitHub Pages + model-viewer)
 model/57G_Tank.glb    mô hình có màu (glTF 2.0, nén Draco)
-model/57G_Tank.stl    mô hình một màu cho trình xem STL của GitHub (bản nhẹ)
-model/57G_Tank_hd.stl bản STL chi tiết hơn, dùng để tải về hoặc in 3D
+model/57G_Tank.stl    bản xem nhanh cho trình xem STL của GitHub (text, đơn vị mm)
+model/57G_Tank_hd.stl bản STL chi tiết (nhị phân, đơn vị mét), để tải về hoặc in 3D
 renders/              15 ảnh render 2400 px và ảnh tổng hợp (bản thu nhỏ cho README ở renders/web/)
 scripts/build/        mã dựng thân xe và chi tiết (Python, numpy, scikit-image, bpy)
 scripts/blender/      các text block có trong file .blend
