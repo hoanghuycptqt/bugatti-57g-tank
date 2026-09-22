@@ -7,6 +7,8 @@
 <meta name="description" content="Mô hình 3D Bugatti Type 57G Tank 1937 (xe thắng Le Mans 1937), dựng từ đầu trong Blender. Xoay, phóng to và xem chi tiết ngay trên trình duyệt.">
 <meta property="og:title" content="Bugatti Type 57G “Tank” 1937 – Xem 3D">
 <meta property="og:image" content="renders/01_hero_front_three_quarter.jpg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.3.1/dist/model-viewer.min.js"></script>
 <style>
   :root { --bg1: #fdfdfe; --bg2: #d9dee5; --ink: #1c2431; --muted: #5a6577; --accent: #2f5d9e; --panel: rgba(255,255,255,.82); }
@@ -40,7 +42,7 @@
 </style>
 </head>
 <body>
-<model-viewer id="mv" src="model/57G_Tank.glb" alt="Mô hình 3D Bugatti Type 57G Tank 1937"
+<model-viewer id="mv" src="https://cdn.jsdelivr.net/gh/hoanghuycptqt/bugatti-57g-tank@v1.0/model/57G_Tank.glb" alt="Mô hình 3D Bugatti Type 57G Tank 1937"
   camera-controls touch-action="none" interaction-prompt="none"
   camera-orbit="-48deg 76deg auto" min-camera-orbit="auto 12deg 1.2m" max-camera-orbit="auto 93deg 30m"
   field-of-view="28deg" min-field-of-view="10deg" max-field-of-view="40deg"
@@ -74,10 +76,16 @@
 
 <script>
   const mv = document.getElementById('mv');
-  const status = document.getElementById('status'), pct = document.getElementById('pct');
-  mv.addEventListener('progress', e => { pct.textContent = Math.round(e.detail.totalProgress * 100) + '%'; });
+  const status = document.getElementById('status');
+  // the model is served from jsDelivr (fast worldwide); the copy on GitHub Pages is the fallback
+  const LOCAL = 'model/57G_Tank.glb';
+  let fellBack = false;
+  mv.addEventListener('progress', e => { const el = document.getElementById('pct'); if (el) el.textContent = Math.round(e.detail.totalProgress * 100) + '%'; });
   mv.addEventListener('load', () => { status.classList.add('hide'); });
-  mv.addEventListener('error', () => { status.textContent = 'Không tải được mô hình. Hãy thử tải lại trang.'; });
+  mv.addEventListener('error', () => {
+    if (!fellBack) { fellBack = true; mv.src = LOCAL; return; }
+    status.textContent = 'Không tải được mô hình. Hãy thử tải lại trang.';
+  });
   const views = [...document.querySelectorAll('#views button[data-o]')];
   // distance that keeps the whole car in frame for the current window shape
   const fitR = () => { const a = Math.max(0.3, mv.clientWidth / Math.max(1, mv.clientHeight));
